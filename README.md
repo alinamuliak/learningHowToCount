@@ -12,10 +12,11 @@ These problem sets help to learn the common solutions for combinatorical tasks.
 2. Install all necessary requirements by entering "pip install -r requirements.txt".
 3. Run "python (or python3 for Mac) main.py".
 
-##License
-[MIT](https://github.com/alinamuliak/learningHowToCount/blob/main/LICENSE)
-
 ##Credit
 - [Alina Muliak](https://github.com/alinamuliak)
 - [Alina Voronina](https://github.com/linvieson)
 - [Oleksandra Stasiuk](https://github.com/oleksadobush)
+
+##License
+[MIT](https://github.com/alinamuliak/learningHowToCount/blob/main/LICENSE)
+
