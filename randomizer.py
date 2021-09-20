@@ -27,7 +27,7 @@ def allocations_with(problem):
         k = 6
     elif "binary" in problem:
         k = 2
-    elif "password" in problem:
+    elif "password"  in problem or "code" in problem:
         k = 10 
     return problem.replace('0', str(num)), [num, k]
 

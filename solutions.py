@@ -39,7 +39,7 @@ def find_solution(numbers: list, problem_type: str) -> str:
 
 
 def check_user_answer(correct_answer: str) -> bool:
-    user_answer = input('Enter your answer (for example: 5!, 25! / 20!): ')
+    user_answer = input()
     if correct_answer.replace(' ', '') == user_answer.replace(' ', ''):
         return True
     return False
