@@ -3,8 +3,8 @@ How many binary numbers consisting of 0 digits are there?|Ay
 How many combinations can be gotten when you roll 0 dice one by one?|Ay
 In how many ways you can pick 0 different * out of 0 *?|An
 How many possible ways there are to form 0 letter words out of 0 letters?|An
-0 people are to sit at a round bench. How many seating arrangements are there?|P
-Trapezna removed the discount for students, and now food is expensive. Alina has a safe with money, and she wants to take some to buy a cake, but she forgot a code for it. She knows that the code consists of 0 different numbers. In how many ways she can enter the numbers and guess the password?|P
+0 people are to sit at a bench. How many seating arrangements are there?|P
+Trapezna removed the discount for students, and now food is expensive. Alina has a safe with money, and she wants to take some to buy a cake, but she forgot a code for it. She knows that the code consists of 0 different symbols. In how many ways she can enter the numbers and guess the password?|P
 CS students learn 0 subjects at UCU. In how many possible ways the schedule for Monday can be arranged?|P
 Olenka wants to choose an outfit for the day. She has 0 skirts and 0 blouses to choose from. How many outfits she can create?|B
 In how many ways you can choose 0 kings out of 0 cards deck?|C
