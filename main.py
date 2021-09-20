@@ -24,7 +24,8 @@ def main():
             if user_type == 'B':
                 sl.print_slow('Great!\nNow please, count the number that comes out and write it here: ')
             else:
-                sl.print_slow('Great!\nNow please, do not count the exact number, but instead write it in the formula format (for example: 45! / (45 - 3)!):')
+                sl.print_slow('Great!\nNow please, do not count the exact number, but instead write it in the formula '
+                              'format (for example: 45! / (45 - 3)!):') 
             user_answer = sl.check_user_answer(correct_answer)
             if not user_answer:
                 sl.print_slow(sl.generate_solution(values, problem_type, correct_answer))
