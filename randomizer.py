@@ -27,11 +27,29 @@ def allocations_with(problem):
 
 
 def allocations_without(problem):
-    pass
+    list_groups = [('calculus assistants', 'students'), ('girls', 'students'), 
+                    ('snacks to buy', 'snacks in the shop'), ('cards', 'decks of cards')]
+
+    if '*' in problem:
+        first, second = random.choice(list_groups)
+        problem.replace('*', first, 1)
+        problem.replace('*', second, 1)
+
+    first_num = random.randint(2, 15)
+    second_num = random.randint(first_num, 25)
+    problem.replace('0', second_num, 1)
+    problem.replace('0', first_num, 1)
+    values = [second_num, first_num]
+    return problem, values
 
 
 def combinations(problem):
-    pass
+    first_num = random.randint(1, 4)
+    second_num = random.randint(first_num, 25)
+    problem.replace('0', first_num, 1)
+    problem.replace('0', second_num, 1)
+    values = [first_num, second_num]
+    return problem, values
 
 
 def multinomial(problem):
@@ -39,7 +57,8 @@ def multinomial(problem):
                   'BANANA', 'PROGRAMMING', 'PYLYP', 'SUCCESSFULLY', 'CUCUMBER']
     list_groups = [('apples', 'people'), ('carrots', 'bunnies'), ('apples', 'people'),
                    ('sweets', 'children'), ('notebooks', 'students'), ('cookies', 'sad people'),
-                   ('bananas', 'monkey'), ('plants', 'houses'), ('fish', 'cats')]
+                   ('bananas', 'monkeys'), ('plants', 'houses'), ('fish', 'cats')]
+
     if '$' in problem:
         word = random.choice(list_words)
         problem.replace('$', word)
