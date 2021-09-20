@@ -69,8 +69,8 @@ def multinomial(problem):
         problem.replace('*', second, 1)
         first_num = random.randint(2, 15)
         second_num = random.randint(first_num, 25)
-        problem.replace('0', first_num, 1)
-        problem.replace('0', second_num, 1)
+        problem.replace('0', str(first_num), 1)
+        problem.replace('0', str(second_num), 1)
         values = [first_num, second_num]
     return problem, values
 
@@ -84,8 +84,8 @@ def basic_calc(problem):
     problem.replace('*', second, 1)
     first_num = random.randint(2, 15)
     second_num = random.randint(first_num, 25)
-    problem.replace('0', first_num, 1)
-    problem.replace('0', second_num, 1)
+    problem.replace('0', str(first_num), 1)
+    problem.replace('0', str(second_num), 1)
     values = [first_num, second_num]
     return problem, values
 
@@ -104,4 +104,4 @@ def randomizing_problems():
 
 
 if __name__ == "__main__":
-    pass
+    print(randomizing_problems())
