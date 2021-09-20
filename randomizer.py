@@ -23,7 +23,13 @@ def permutation(problem):
 
 def allocations_with(problem):
     num = random.randint(6, 50)
-    return [problem.replace('0', str(num)), [num]]
+    if "dice" in problem:
+        k = 6
+    elif "binary" in problem:
+        k = 2
+    elif "password" in problem:
+        k = 10 
+    return problem.replace('0', str(num)), [num, k]
 
 
 def allocations_without(problem):
@@ -36,8 +42,8 @@ def allocations_without(problem):
 
     first_num = random.randint(2, 15)
     second_num = random.randint(15, 25)
-    problem = problem.replace('0', str(second_num), 1)
     problem = problem.replace('0', str(first_num), 1)
+    problem = problem.replace('0', str(second_num), 1)
     values = [second_num, first_num]
     return problem, values
 
