@@ -32,13 +32,12 @@ def allocations_without(problem):
 
     if '*' in problem:
         first, second = random.choice(list_groups)
-        problem.replace('*', first, 1)
-        problem.replace('*', second, 1)
+        problem = problem.replace('*', first, 1).replace('*', second, 1)
 
     first_num = random.randint(2, 15)
     second_num = random.randint(first_num, 25)
-    problem.replace('0', str(second_num), 1)
-    problem.replace('0', str(first_num), 1)
+    problem = problem.replace('0', str(second_num), 1)
+    problem = problem.replace('0', str(first_num), 1)
     values = [second_num, first_num]
     return problem, values
 
@@ -46,8 +45,7 @@ def allocations_without(problem):
 def combinations(problem):
     first_num = random.randint(1, 4)
     second_num = random.randint(first_num, 25)
-    problem.replace('0', str(first_num), 1)
-    problem.replace('0', str(second_num), 1)
+    problem = problem.replace('0', str(first_num), 1).replace('0', str(second_num), 1)
     values = [first_num, second_num]
     return problem, values
 
@@ -61,16 +59,15 @@ def multinomial(problem):
 
     if '$' in problem:
         word = random.choice(list_words)
-        problem.replace('$', word)
+        problem = problem.replace('$', word)
         values = [len(word)]
     else:
         first, second = random.choice(list_groups)
-        problem.replace('*', first, 1)
-        problem.replace('*', second, 1)
+        problem = problem.replace('*', first, 1)
+        problem = problem.replace('*', second, 1)
         first_num = random.randint(2, 15)
         second_num = random.randint(first_num, 25)
-        problem.replace('0', str(first_num), 1)
-        problem.replace('0', str(second_num), 1)
+        problem = problem.replace('0', str(first_num), 1).replace('0', str(second_num), 1)
         values = [first_num, second_num]
     return problem, values
 
@@ -80,12 +77,11 @@ def basic_calc(problem):
                     ('shorts', 't-shorts'), ('shoes', 'dresses'), ('pants', 'sweaters'),
                     ('trousers', 'blouses'), ('pants', 't-shirts'), ('shoes', 'overalls')]
     first, second = random.choice(list_outfits)
-    problem.replace('*', first, 1)
-    problem.replace('*', second, 1)
+    problem = problem.replace('*', first, 1)
+    problem = problem.replace('*', second, 1)
     first_num = random.randint(2, 15)
     second_num = random.randint(first_num, 25)
-    problem.replace('0', str(first_num), 1)
-    problem.replace('0', str(second_num), 1)
+    problem = problem.replace('0', str(first_num), 1).replace('0', str(second_num), 1)
     values = [first_num, second_num]
     return problem, values
 
