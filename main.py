@@ -1,63 +1,40 @@
-import time
+import randomizer as rd
+import solutions as sl
+import sys
 
 
-def print_slow(text: str) -> None:
-    try:
-        for symbol in text:
-            print(symbol, flush=True, end='')
-            time.sleep(0.05)
-    except KeyboardInterrupt:
-        print(text)
-
-def find_solution(numbers: list, problem_type: str) -> str:
-    problems_types = {'P': 'n!',
-                      'Ay': 'n ^ k',
-                      'An': 'n! / (n - k)!',
-                      'M': 'n! / (k1! * k2! * ... * kr!)',
-                      'C': 'n! / (n - k)! * k!',
-                      'B': 'm * n * ..'}
-    if problem_type in ('P'):
-        result_formula = problems_types[problem_type].replace('n', str(numbers[0]))
-    elif problem_type in ('Ay', 'C', 'An'):
-        result_formula = problems_types[problem_type].replace('n', str(numbers[1])).replace('k', str(numbers[0]))
-    elif problem_type == 'M':
-        result_formula = problems_types[problem_type].replace('n', str(numbers[0]))[:6]
-        for k in numbers[1:]:
-            result_formula += str(k) + '! * '
-        result_formula = result_formula[:-3] + ')'
-    elif problem_type == 'B':
-        result_formula = ''
-        for num in numbers:
-            result_formula += str(num) + ' * '
-        result_formula = result_formula[:-3]
-    else:
-        return -1
-    try:
-        return str(eval(result_formula))
-    except:
-        return result_formula
+def main():
+    sl.print_slow("Bonjour! If you want to learn how to count, do not leave. ")
+    sl.print_slow("Are you ready to think a little bit? y/n: ")
+    decision1 = input()
+    if decision1.lower() != 'y':
+        sl.print_slow("See you next time! I'm pretty sure you do not know everything!")
+        sys.exit()
+    while True:
+        problem, problem_type, values = rd.randomizing_problems()
+        sl.print_slow('\n\nTHIS IS YOUR PROBLEM:\n')
+        sl.print_slow(problem + '\n\nANY IDEAS????\nWhat you should use?:\nPermutation - P\nCombinations - '
+                                'C\nAllocation with replacement - Ay\nAllocation without replacement - '
+                                'An\nMultinomial coefficient - M\nBasic principle of counting - B\n\n')
+        correct_answer = sl.find_solution(values, problem_type)
+        user_type = input()
+        if user_type.lower() != problem_type.lower():
+            sl.print_slow(sl.generate_solution(values, problem_type, correct_answer))
+        else:
+            if user_type == 'B':
+                sl.print_slow('Great!\nNow please, count the number that comes out and write it here: ')
+            else:
+                sl.print_slow('Great!\nNow please, do not count the exact number, but instead write it in the formula format (for example: 45! / (45 - 3)!):')
+            user_answer = sl.check_user_answer(correct_answer)
+            if not user_answer:
+                sl.print_slow(sl.generate_solution(values, problem_type, correct_answer))
+            else:
+                sl.print_slow('Well done!!\n')
+        sl.print_slow('\nDo you want to try one more? y/n: ')
+        one_more_time = input()
+        if one_more_time != 'y':
+            break
+    sl.print_slow('THANKS FOR USING!!!!!<3')
 
 
-def check_user_answer(correct_answer: str) -> bool:
-    user_answer = input()
-    if correct_answer.replace(' ', '') == user_answer.replace(' ', ''):
-        return True
-    return False
-
-
-def generate_solution(numbers: list, problem_type: str, result_formula: str):
-    problems_types = {'P': 'permutation',
-                      'Ay': 'allocation with repetition',
-                      'An': 'allocation without repetition',
-                      'M': 'permutation of n objects with k1, k2, ...  indistinguishable objects',
-                      'C': 'unordered group combinations',
-                      'B': 'basic principle of counting'}
-    problems_formulas = {'P': 'n!',
-                      'Ay': 'n ^ k',
-                      'An': 'n! / (n - k)!',
-                      'M': 'n! / (k1! * k2! * ... * kr!)',
-                      'C': 'n! / (n - k)! * k!',
-                      'B': 'm * n * ..'}
-
-    return f'At least you tried...\nSOLUTION:\n{result_formula}\n\nIn such types of problems, \
-{problems_types[problem_type]} should be used. The common formula is as follows: {problems_formulas[problem_type]}'
+main()

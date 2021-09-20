@@ -9,6 +9,7 @@ def print_slow(text: str) -> None:
     except KeyboardInterrupt:
         print(text)
 
+
 def find_solution(numbers: list, problem_type: str) -> str:
     problems_types = {'P': 'n!',
                       'Ay': 'n ^ k',
@@ -16,7 +17,7 @@ def find_solution(numbers: list, problem_type: str) -> str:
                       'M': 'n! / (k1! * k2! * ... * kr!)',
                       'C': 'n! / (n - k)! * k!',
                       'B': 'm * n * ..'}
-    if problem_type in ('P'):
+    if problem_type == 'P':
         result_formula = problems_types[problem_type].replace('n', str(numbers[0]))
     elif problem_type in ('Ay', 'C', 'An'):
         result_formula = problems_types[problem_type].replace('n', str(numbers[1])).replace('k', str(numbers[0]))
@@ -53,11 +54,11 @@ def generate_solution(numbers: list, problem_type: str, result_formula: str):
                       'C': 'unordered group combinations',
                       'B': 'basic principle of counting'}
     problems_formulas = {'P': 'n!',
-                      'Ay': 'n ^ k',
-                      'An': 'n! / (n - k)!',
-                      'M': 'n! / (k1! * k2! * ... * kr!)',
-                      'C': 'n! / (n - k)! * k!',
-                      'B': 'm * n * ..'}
+                         'Ay': 'n ^ k',
+                         'An': 'n! / (n - k)!',
+                         'M': 'n! / (k1! * k2! * ... * kr!)',
+                         'C': 'n! / (n - k)! * k!',
+                         'B': 'm * n * ..'}
 
     return f'At least you tried...\nSOLUTION:\n{result_formula}\n\nIn such types of problems, \
 {problems_types[problem_type]} should be used. The common formula is as follows: {problems_formulas[problem_type]}'
