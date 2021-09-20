@@ -37,8 +37,8 @@ def allocations_without(problem):
 
     first_num = random.randint(2, 15)
     second_num = random.randint(first_num, 25)
-    problem.replace('0', second_num, 1)
-    problem.replace('0', first_num, 1)
+    problem.replace('0', str(second_num), 1)
+    problem.replace('0', str(first_num), 1)
     values = [second_num, first_num]
     return problem, values
 
@@ -46,8 +46,8 @@ def allocations_without(problem):
 def combinations(problem):
     first_num = random.randint(1, 4)
     second_num = random.randint(first_num, 25)
-    problem.replace('0', first_num, 1)
-    problem.replace('0', second_num, 1)
+    problem.replace('0', str(first_num), 1)
+    problem.replace('0', str(second_num), 1)
     values = [first_num, second_num]
     return problem, values
 
