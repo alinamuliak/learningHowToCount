@@ -2,6 +2,7 @@ import randomizer as rd
 import solutions as sl
 import sys
 
+
 def main():
     sl.print_slow("Bonjour! If you want to learn how to count, do not leave. ")
     problem, problem_type, values = rd.randomizing_problems()
@@ -29,5 +30,6 @@ def main():
         if one_more_time != 'y':
             break
     sl.print_slow('THANKS FOR USING!!!!!<3')
+
 
 main()

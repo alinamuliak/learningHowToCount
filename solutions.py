@@ -32,7 +32,10 @@ def find_solution(numbers: list, problem_type: str) -> str:
         result_formula = result_formula[:-3]
     else:
         return -1
-    return result_formula
+    try:
+        return eval(result_formula)
+    except:
+        return result_formula
 
 
 def check_user_answer(correct_answer: str) -> bool:
