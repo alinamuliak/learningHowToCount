@@ -2,10 +2,12 @@ import time
 
 
 def print_slow(text: str) -> None:
-    for symbol in text:
-        print(symbol, flush=True, end='')
-        time.sleep(0.05)
-
+    try:
+        for symbol in text:
+            print(symbol, flush=True, end='')
+            time.sleep(0.05)
+    except KeyboardInterrupt:
+        print(text)
 
 def find_solution(numbers: list, problem_type: str) -> str:
     problems_types = {'P': 'n!',
