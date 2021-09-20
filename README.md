@@ -13,6 +13,7 @@ These problem sets help to learn the common solutions for combinatorical tasks.
 3. Run "python (or python3 for Mac) main.py".
 
 ## Credit
+three wonderful girls <3
 - [Alina Muliak](https://github.com/alinamuliak)
 - [Alina Voronina](https://github.com/linvieson)
 - [Oleksandra Stasiuk](https://github.com/oleksadobush)
