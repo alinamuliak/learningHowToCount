@@ -33,7 +33,7 @@ def find_solution(numbers: list, problem_type: str) -> str:
     else:
         return -1
     try:
-        return eval(result_formula)
+        return str(eval(result_formula))
     except:
         return result_formula
 
