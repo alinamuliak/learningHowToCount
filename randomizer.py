@@ -50,29 +50,6 @@ def combinations(problem):
     return problem, values
 
 
-def multinomial(problem):
-    list_words = ['EXELLENT', 'MISSISSIPPI', 'PEPPERONI', 'SPAGHETTI', 'BUBBLE',
-                  'BANANA', 'PROGRAMMING', 'PYLYP', 'SUCCESSFULLY', 'CUCUMBER']
-    list_groups = [('apples', 'people'), ('carrots', 'bunnies'), ('apples', 'people'),
-                   ('sweets', 'children'), ('notebooks', 'students'), ('cookies', 'sad people'),
-                   ('bananas', 'monkeys'), ('plants', 'houses'), ('fish', 'cats')]
-
-    if '$' in problem:
-        word = random.choice(list_words)
-        problem = problem.replace('$', word)
-        values = [len(word)]
-    else:
-        first, second = random.choice(list_groups)
-        problem = problem.replace('*', first, 1)
-        problem = problem.replace('*', second, 1)
-        first_num = random.randint(2, 15)
-        second_num = random.randint(15, 25)
-        problem = problem.replace('0', str(first_num), 1)
-        problem = problem.replace('0', str(second_num), 1)
-        values = [first_num, second_num]
-    return problem, values
-
-
 def basic_calc(problem):
     list_outfits = [('skirts', 'blouses'), ('jeans', 't-shirts'), ('jeans', 'hoodies'),
                     ('shorts', 't-shorts'), ('shoes', 'dresses'), ('pants', 'sweaters'),
@@ -88,7 +65,7 @@ def basic_calc(problem):
 
 
 def randomizing_problems():
-    problem_types = {'P': permutation, 'M': multinomial, 'Ay': allocations_with,
+    problem_types = {'P': permutation, 'Ay': allocations_with,
                      'An': allocations_without, 'C': combinations, 'B': basic_calc}
     problems = read_file()
     all_types = list(problem_types.keys())
