@@ -47,6 +47,12 @@ def generate_solution(numbers: list, problem_type: str, result_formula: str):
                       'M': 'permutation of n objects with k1, k2, ...  indistinguishable objects',
                       'C': 'unordered group combinations',
                       'B': 'basic principle of counting'}
+    problems_formulas = {'P': 'n!',
+                      'Ay': 'n ^ k',
+                      'An': 'n! / (n - k)!',
+                      'M': 'n! / (k1! * k2! * ... * kr!)',
+                      'C': 'n! / (n - k)! * k!',
+                      'B': 'm * n * ..'}
 
-    return f'SOLUTION:\n{result_formula}\n\nIn such types of problems, \
-{problems_types[problem_type]} should be used. The common formula is as follows: {problems_types[problem_type]}'
+    return f'At least you tried...\nSOLUTION:\n{result_formula}\n\nIn such types of problems, \
+{problems_types[problem_type]} should be used. The common formula is as follows: {problems_formulas[problem_type]}'
