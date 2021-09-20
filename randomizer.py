@@ -23,7 +23,7 @@ def permutation(problem):
 
 def allocations_with(problem):
     num = random.randint(6, 50)
-    return [problem.replece('0', str(num)), [num]]
+    return [problem.replace('0', str(num)), [num]]
 
 
 def allocations_without(problem):
