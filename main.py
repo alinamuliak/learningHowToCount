@@ -1,12 +1,8 @@
-import random
 import time
 def print_slow(text: str) -> None:
     for symbol in text:
         print(symbol, flush=True, end='')
         time.sleep(0.1)
-
-print_slow('Trapezna removed the discount for students, and now food is expensive. Alina has a safe with money, and she wants to take some to buy a cake, but she forgot a code for it. She knows that the code consists of 0 different numbers. In how many ways she can enter the numbers and guess the password?|P\n\
-CS students learn 0 subjects at UCU. In how many possible ways the schedule for Monday can be arranged?|P')
 
 def find_solution(numbers: list, problem_type: str) -> str:
     problems_types = {'P': 'n!',
