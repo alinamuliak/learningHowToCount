@@ -4,7 +4,7 @@ import time
 def print_slow(text: str) -> None:
     for symbol in text:
         print(symbol, flush=True, end='')
-        time.sleep(0.1)
+        time.sleep(0.05)
 
 
 def find_solution(numbers: list, problem_type: str) -> str:
@@ -50,13 +50,3 @@ def generate_solution(numbers: list, problem_type: str, result_formula: str):
 
     return f'SOLUTION:\n{result_formula}\n\nIn such types of problems, \
 {problems_types[problem_type]} should be used. The common formula is as follows: {problems_types[problem_type]}'
-
-# if __name__ == '__main__':
-#     numbers = [5]
-#     p_t = 'P'
-#     correct_formula = find_solution(numbers, p_t)
-#     user_answer_correctness = check_user_answer(correct_formula)
-#     if user_answer_correctness:
-#         print('Well done!')
-#     else:
-#         print(generate_solution(numbers, p_t, correct_formula))
