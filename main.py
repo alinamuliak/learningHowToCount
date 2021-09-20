@@ -15,7 +15,7 @@ def main():
         sl.print_slow('\n\nTHIS IS YOUR PROBLEM:\n')
         sl.print_slow(problem + '\n\nANY IDEAS????\nWhat you should use?:\nPermutation - P\nCombinations - '
                                 'C\nAllocation with replacement - Ay\nAllocation without replacement - '
-                                'Ay\nMultinomial coefficient - M\nBasic principle of counting - B\n\n')
+                                'An\nMultinomial coefficient - M\nBasic principle of counting - B\n\n')
         correct_answer = sl.find_solution(values, problem_type)
         user_type = input()
         if user_type.lower() != problem_type:
