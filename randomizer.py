@@ -35,7 +35,7 @@ def allocations_without(problem):
         problem = problem.replace('*', first, 1).replace('*', second, 1)
 
     first_num = random.randint(2, 15)
-    second_num = random.randint(first_num, 25)
+    second_num = random.randint(15, 25)
     problem = problem.replace('0', str(second_num), 1)
     problem = problem.replace('0', str(first_num), 1)
     values = [second_num, first_num]
@@ -44,7 +44,7 @@ def allocations_without(problem):
 
 def combinations(problem):
     first_num = random.randint(1, 4)
-    second_num = random.randint(first_num, 25)
+    second_num = random.randint(4, 25)
     problem = problem.replace('0', str(first_num), 1).replace('0', str(second_num), 1)
     values = [first_num, second_num]
     return problem, values
@@ -66,8 +66,9 @@ def multinomial(problem):
         problem = problem.replace('*', first, 1)
         problem = problem.replace('*', second, 1)
         first_num = random.randint(2, 15)
-        second_num = random.randint(first_num, 25)
-        problem = problem.replace('0', str(first_num), 1).replace('0', str(second_num), 1)
+        second_num = random.randint(15, 25)
+        problem = problem.replace('0', str(first_num), 1)
+        problem = problem.replace('0', str(second_num), 1)
         values = [first_num, second_num]
     return problem, values
 
@@ -80,7 +81,7 @@ def basic_calc(problem):
     problem = problem.replace('*', first, 1)
     problem = problem.replace('*', second, 1)
     first_num = random.randint(2, 15)
-    second_num = random.randint(first_num, 25)
+    second_num = random.randint(15, 25)
     problem = problem.replace('0', str(first_num), 1).replace('0', str(second_num), 1)
     values = [first_num, second_num]
     return problem, values
