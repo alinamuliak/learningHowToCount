@@ -19,7 +19,7 @@ def find_solution(numbers: list, problem_type: str) -> str:
     if problem_type in ('P', 'An'):
         result_formula = problems_types[problem_type].replace('n', str(numbers[0]))
     elif problem_type in ('Ay', 'C'):
-        result_formula = problems_types[problem_type].replace('n', str(numbers[0])).replace('k', str(numbers[1]))
+        result_formula = problems_types[problem_type].replace('n', str(numbers[1])).replace('k', str(numbers[0]))
     elif problem_type == 'M':
         result_formula = problems_types[problem_type].replace('n', str(numbers[0]))[:6]
         for k in numbers[1:]:

@@ -35,7 +35,7 @@ def allocations_without(problem):
         problem = problem.replace('*', first, 1).replace('*', second, 1)
 
     first_num = random.randint(2, 15)
-    second_num = random.randint(first_num, 25)
+    second_num = random.randint(15, 25)
     problem = problem.replace('0', str(second_num), 1)
     problem = problem.replace('0', str(first_num), 1)
     values = [second_num, first_num]
@@ -44,31 +44,9 @@ def allocations_without(problem):
 
 def combinations(problem):
     first_num = random.randint(1, 4)
-    second_num = random.randint(first_num, 25)
+    second_num = random.randint(4, 25)
     problem = problem.replace('0', str(first_num), 1).replace('0', str(second_num), 1)
     values = [first_num, second_num]
-    return problem, values
-
-
-def multinomial(problem):
-    list_words = ['EXELLENT', 'MISSISSIPPI', 'PEPPERONI', 'SPAGHETTI', 'BUBBLE',
-                  'BANANA', 'PROGRAMMING', 'PYLYP', 'SUCCESSFULLY', 'CUCUMBER']
-    list_groups = [('apples', 'people'), ('carrots', 'bunnies'), ('apples', 'people'),
-                   ('sweets', 'children'), ('notebooks', 'students'), ('cookies', 'sad people'),
-                   ('bananas', 'monkeys'), ('plants', 'houses'), ('fish', 'cats')]
-
-    if '$' in problem:
-        word = random.choice(list_words)
-        problem = problem.replace('$', word)
-        values = [len(word)]
-    else:
-        first, second = random.choice(list_groups)
-        problem = problem.replace('*', first, 1)
-        problem = problem.replace('*', second, 1)
-        first_num = random.randint(2, 15)
-        second_num = random.randint(first_num, 25)
-        problem = problem.replace('0', str(first_num), 1).replace('0', str(second_num), 1)
-        values = [first_num, second_num]
     return problem, values
 
 
@@ -80,14 +58,14 @@ def basic_calc(problem):
     problem = problem.replace('*', first, 1)
     problem = problem.replace('*', second, 1)
     first_num = random.randint(2, 15)
-    second_num = random.randint(first_num, 25)
+    second_num = random.randint(15, 25)
     problem = problem.replace('0', str(first_num), 1).replace('0', str(second_num), 1)
     values = [first_num, second_num]
     return problem, values
 
 
 def randomizing_problems():
-    problem_types = {'P': permutation, 'M': multinomial, 'Ay': allocations_with,
+    problem_types = {'P': permutation, 'Ay': allocations_with,
                      'An': allocations_without, 'C': combinations, 'B': basic_calc}
     problems = read_file()
     all_types = list(problem_types.keys())

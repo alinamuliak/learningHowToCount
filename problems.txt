@@ -1,6 +1,3 @@
-In how many ways can 0 distinguishable * be distributed among 0 *?|M
-In how many ways can 0 undistinguishable * be distributed among 0 *?|M
-How many different words can be formed out of letters in the word $?|M
 Sasha forgot her phone password, which consists of 0 numbers. In how many ways she can enter the numbers and guess the password?|Ay
 How many binary numbers consisting of 0 digits are there?|Ay
 How many combinations can be gotten when you roll 0 dice one by one?|Ay
