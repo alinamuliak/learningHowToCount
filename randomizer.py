@@ -71,14 +71,18 @@ def basic_calc(problem):
     return problem, values
 
 
-def randomizing_problems(problem_type, problem):
+def randomizing_problems():
     problem_types = {'P': permutation, 'M': multinomial, 'Ay': allocations_with,
                      'An': allocations_without, 'C': combinations, 'B': basic_calc}
-    text, values = problem_types[problem_type(problem)]
+    problems = read_file()
+    all_types = list(problem_types.keys())
+    problem_type = random.choice(all_types)
+    problem = random.choice(problems[problem_type])
+    function = problem_types[problem_type]
+    text, values = function(problem)
     solution = [text, problem_type, values]
     return solution
 
 
 if __name__ == "__main__":
-    problems = read_file()
-
+    pass
